@@ -19,6 +19,6 @@ group [:bg, :drive, :folder, :file], "Test Ruby", exe: "ruby", ext: ".rb", code:
 
 ## words
 
-Throw away your old-fashioned IDEs.
-Be companion with vim/emacs and other excellent tools.
-Make your explorer a unified development environment(UDE).
+Throw away your old-fashioned IDEs.    
+Be companion with vim/emacs and other unique tools.    
+Make your explorer a unified development environment(UDE).    
