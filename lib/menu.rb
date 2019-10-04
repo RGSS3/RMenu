@@ -15,12 +15,12 @@ def put(item, name, opt = {})
    args = opt[:args] || "\\\"#{argname}\\\""
    exe = `where.exe #{exe}`.gsub(/\n/, "")
    f = "\"\\\"#{exe}\\\" #{args}"
-   system "REG ADD HKCR\\#{item}\\Shell\\mymenu.#{@item} /ve /t REG_SZ /d #{name.inspect}"
-   system "REG ADD HKCR\\#{item}\\Shell\\mymenu.#{@item}\\command /ve /t REG_SZ /d #{f}"
+   system "REG ADD HKCR\\#{item}\\Shell\\mymenu.#{@item} /f /ve /t REG_SZ /d #{name.inspect}"
+   system "REG ADD HKCR\\#{item}\\Shell\\mymenu.#{@item}\\command /f /ve /t REG_SZ /d #{f}"
    if icon = opt[:icon]
      iconindex = opt[:iconindex] || "0"
      f = File.expand_path(`where #{icon}`.gsub(/\n/, "")).tr("/", "\\")
-     system "REG ADD HKCR\\#{item}\\Shell\\mymenu.#{@item} /v icon /t REG_SZ /d \"#{f},#{iconindex}\""
+     system "REG ADD HKCR\\#{item}\\Shell\\mymenu.#{@item} /f /v icon /t REG_SZ /d \"#{f},#{iconindex}\""
    end
 end
 
@@ -69,3 +69,5 @@ def group(a, *b)
     send x, *b
   }
 end
+
+   
