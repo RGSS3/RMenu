@@ -40,6 +40,13 @@ def drive name, opt={}
   put "drive", name, trans(opt)
 end
 
+def ext e, name, opt = {}
+    a = `reg query HKCR\\#{e} /ve`[/REG_SZ\s*(\S+)/, 1]
+    if a
+      put a, name, trans(opt)
+    end
+end
+
 def bg name, opt={}
   opt[:argname] = "%V"
   put "Directory\\Background", name, trans(opt)
@@ -66,7 +73,12 @@ end
 
 def group(a, *b)
   a.each{|x|
-    send x, *b
+    case x
+    when Symbol
+       send x, *b
+    when /^\..*/
+       ext x, *b
+    end
   }
 end
 
