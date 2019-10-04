@@ -16,3 +16,9 @@ group [:bg, :drive, :folder, :file], "Test Ruby", exe: "ruby", ext: ".rb", code:
 ```
 
 ![test.png](test.png)
+
+## words
+
+Throw away your old-fashioned IDEs.
+Be companion with vim/emacs and other excellent tools.
+Make your explorer a unified development environment(UDE).
