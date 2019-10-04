@@ -15,3 +15,4 @@ group [:bg, :drive, :folder, :file], "Test Ruby", exe: "ruby", ext: ".rb", code:
 
 ```
 
+![test.png](test.png)
