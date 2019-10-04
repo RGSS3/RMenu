@@ -1,6 +1,6 @@
 # RMenu
-Windows Explorer Menu Generator
-(1/100 of HWonders)
+Windows Explorer Menu Generator    
+(1 of 100 HWonders)
 
 ## usage
 ```ruby
