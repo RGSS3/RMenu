@@ -13,7 +13,7 @@ group [:bg, :drive, :folder, :file], "Test Ruby", exe: "ruby", ext: ".rb", code:
    system "pause"
 }, icon: "ruby"
 
-ext ".rb", "run", exe: "ruby", ext: ".rb", code: %{
+group [".rb", ".rbw"], "run", exe: "ruby", ext: ".rb", code: %{
    system "ruby \#{ARGV[0]}"
    system "pause"
 } 
