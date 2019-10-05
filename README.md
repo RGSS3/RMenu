@@ -39,7 +39,9 @@ Be companion with vim/emacs and other unique tools.
 Make your explorer a unified development environment(UDE).    
 
 ## Update Log
+```
 2019/10/6 Add --dry-run support, which will only show what will be execute without real executing.     
           Besides debugging purpose, you may regard it as an export to batch file form.
 2019/10/6 Add basemenu, submenu, entry support
 2019/10/6 Fixed some minor issues, "folder" base is replaced by "dir"
+```
