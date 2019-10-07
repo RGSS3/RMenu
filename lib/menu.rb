@@ -5,11 +5,11 @@ def sys(*a)
     system *a
   end
 end
-HEADER = "mymenu"
+HEADER = "000"
 
 def clean
   BASE.values.each{|k|
-    x = `reg query HKCR\\#{k}\\Shell`
+    x = `reg query HKCR\\#{k}\\Shell`.force_encoding("GBK")
     r = x.split("\n").select{|y| y["#{HEADER}."]}
     r.each{|y|
        sys "reg delete #{y} /f"
@@ -102,7 +102,7 @@ def trans(opt)
     @fname += 1
      filename = "#{@path}\\#{@fname}#{opt[:ext]}"
      File.write filename, opt[:code]
-     opt[:args] = "\\\"#{filename}\\\" \\\"#{argname}\\\""
+     opt[:args] = "#{opt[:args]} \\\"#{filename}\\\" #{argname}"
      return opt
   end
 
@@ -123,7 +123,9 @@ ensure
 end
 
 def basemenus(a)
-  a.each(&method(:basemenu))
+  a.each{|n|
+     basemenu n do yield end
+  }
 end
 
 def submenu(a, opt = nil)
